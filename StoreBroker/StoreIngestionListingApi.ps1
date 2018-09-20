@@ -632,6 +632,8 @@ function Update-Listing
         [Alias('UpdateTrailers')]
         [switch] $UpdateVideos,
 
+        [switch] $UpdateReleaseNotes,
+
         [string] $ClientRequestId,
 
         [string] $CorrelationId,
