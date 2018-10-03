@@ -1578,7 +1578,10 @@ function ConvertFrom-Listing
         Add-ReleaseNotes -Xml $Xml -Listing $Listing
         $screenshots = Add-ScreenshotCaptions -Xml $xml -Images $images -LanguageCode $languageCode
         $additionalAssets = Add-AdditionalAssets -Xml $xml -Images $images -LanguageCode $languageCode
-        $trailerFiles = Add-Trailers -Xml $xml -Videos $videos -LanguageCode $languageCode
+        if($videos)
+        {
+            $trailerFiles = Add-Trailers -Xml $xml -Videos $videos -LanguageCode $languageCode
+        }
         Add-AppFeatures -Xml $Xml -Listing $Listing
         Add-RecommendedHardware -Xml $Xml -Listing $Listing
         Add-MinimumHardware -Xml $Xml -Listing $Listing
